@@ -1,0 +1,8 @@
+07:03:52 [http-nio-8080-exec-1] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [77a311bf] HTTP POST "/api/images"
+07:03:52 [http-nio-8080-exec-1] DEBUG o.s.w.r.r.m.a.RequestMappingHandlerMapping - [77a311bf] Mapped to reactor.core.publisher.Mono<java.lang.Void> com.ntt.nttsocialmedia.controller.ImageController.create(reactor.core.publisher.Flux<com.ntt.nttsocialmedia.beans.Image>)
+07:03:52 [http-nio-8080-exec-1] DEBUG o.s.w.r.r.m.a.RequestBodyArgumentResolver - [77a311bf] Content-Type:application/json
+07:03:52 [http-nio-8080-exec-1] DEBUG o.s.w.r.r.m.a.RequestBodyArgumentResolver - [77a311bf] 0..N [com.ntt.nttsocialmedia.beans.Image]
+07:03:52 [http-nio-8080-exec-1] DEBUG o.s.b.a.w.r.e.DefaultErrorWebExceptionHandler - [77a311bf] Resolved [CodecException: Type definition error: [simple type, class com.ntt.nttsocialmedia.beans.Image]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.ntt.nttsocialmedia.beans.Image` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: UNKNOWN; line: -1, column: -1]] for HTTP POST /api/images
+07:03:52 [http-nio-8080-exec-1] DEBUG o.s.h.c.json.Jackson2JsonEncoder - [77a311bf] Encoding [{timestamp=Thu Dec 13 15:03:52 CST 2018, path=/api/images, status=500, error=Internal Server Error,  (truncated)...]
+07:03:52 [http-nio-8080-exec-1] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [77a311bf] Completed 500 INTERNAL_SERVER_ERROR

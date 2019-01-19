@@ -1,0 +1,48 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.1.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.ntt'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	maven {
+		url 'http://maven.aliyun.com/nexus/content/groups/public/'
+	}
+	mavenCentral()
+}
+
+
+dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+	implementation('org.springframework.boot:spring-boot-starter-webflux')
+	compileOnly('org.projectlombok:lombok')
+	compile('org.synchronoss.cloud:nio-multipart-parser:1.1.0')
+	compile('org.springframework.boot:spring-boot-starter-webflux') {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-reactor-netty'
+	}
+	compile('org.springframework.boot:spring-boot-starter-tomcat')
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
+	compile('org.springframework.boot:spring-boot-starter-test')
+	compile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+	compile('org.seleniumhq.selenium:selenium-java')
+	compile('io.projectreactor:reactor-test')
+
+	compile("org.springframework.boot:spring-boot-devtools")
+
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+}
